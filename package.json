@@ -1,0 +1,22 @@
+{
+    "devDependencies": {
+        "@symfony/webpack-encore": "^0.20.0",
+        "babel-preset-react": "^6.24.1",
+        "webpack-notifier": "^1.6.0"
+    },
+    "license": "UNLICENSED",
+    "private": true,
+    "scripts": {
+        "dev-server": "encore dev-server",
+        "dev": "encore dev",
+        "watch": "encore dev --watch",
+        "build": "encore production"
+    },
+    "dependencies": {
+        "hypernova": "^2.3.0",
+        "hypernova-react": "^2.1.0",
+        "prop-types": "^15.6.2",
+        "react": "^16.5.2",
+        "react-dom": "^16.5.2"
+    }
+}

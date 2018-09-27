@@ -32,4 +32,7 @@ services:
     # please note that last definitions always *replace* previous ones
 
     WF\Hypernova\Renderer:
-        - '%env(resolve:HYPERNOVA_URL)%'
+        arguments:
+            - '%env(resolve:HYPERNOVA_URL)%'
+        calls:
+            - [ addPlugin, [ '@App\Hypernova\ClientSideRenderPlugin' ] ]

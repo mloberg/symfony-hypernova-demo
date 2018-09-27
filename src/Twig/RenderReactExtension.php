@@ -39,12 +39,11 @@ class RenderReactExtension extends AbstractExtension
      * 
      * @return string
      */
-    public function renderReactComponent(string $compontent, array $props = [])
+    public function renderReactComponent(string $compontent, array $props = [], bool $serverSide = true)
     {
-        $id = bin2hex(random_bytes(6));
-        $this->renderer->addJob($id, ['name' => $compontent, 'data' => $props]);
+        $this->renderer->addJob($compontent, ['name' => $compontent, 'data' => $props, 'metadata' => ['client_render' => !$serverSide]]);
         $response = $this->renderer->render();
 
-        return (string) $response->results[$id];
+        return (string) $response->results[$compontent];
     }
 }

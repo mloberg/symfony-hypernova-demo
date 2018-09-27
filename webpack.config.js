@@ -22,5 +22,7 @@ Encore
 ;
 
 const serverConfig = Encore.getWebpackConfig();
+serverConfig.target = 'node';
+serverConfig.output.libraryTarget = 'commonjs';
 
 module.exports = [appConfig, serverConfig];
